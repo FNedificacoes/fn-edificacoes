@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Lógica do Carrossel Automático de Fotos do Topo
+    // Carrossel das imagens do Hero
     const slides = document.querySelectorAll('.hero-carousel .slide');
     
     if (slides.length > 0) {
         let currentSlide = 0;
-        const slideInterval = 4000; // Tempo em milissegundos (4 segundos por foto)
+        const slideInterval = 4000; // Tempo de troca entre as fotos (4 segundos)
 
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
@@ -14,4 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setInterval(nextSlide, slideInterval);
     }
+
+    // Liberação da música de fundo após o primeiro clique do usuário
+    document.addEventListener('click', function() {
+        const audio = document.getElementById('bg-music');
+        if (audio && audio.paused) {
+            audio.play().catch(error => console.log("Áudio aguardando interação."));
+        }
+    }, { once: true });
 });
