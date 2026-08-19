@@ -11,7 +11,7 @@
 <body>
 
     <!-- MÚSICA DE FUNDO OCULTA -->
-    <audio id="bg-music" src="musica.mp3" loop autoplay></audio>
+    <audio id="bg-music" src="musica.mp3" loop preload="auto"></audio>
 
     <!-- CABEÇALHO COM LOGO E NOME COMPLETO -->
     <header class="header">
@@ -37,9 +37,19 @@
         </div>
     </header>
 
-    <!-- TOPO / CARROSSEL 100% LIMPO (COM ESCURECIMENTO) -->
+    <!-- TOPO / VÍDEO INICIAL E CARROSSEL -->
     <section class="hero">
-        <div class="hero-carousel">
+        <!-- BLOCO DO VÍDEO COMERCIAL (Toca inteiro com som primeiro) -->
+        <div id="intro-video-container" class="intro-video-wrapper active">
+            <video id="commercial-video" playsinline controls>
+                <source src="video-comercial.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+            <button id="skip-intro-btn" class="btn-skip-intro">Pular Vídeo <i class="fas fa-forward"></i></button>
+        </div>
+
+        <!-- CARROSSEL DE FOTOS (Só começa depois que o vídeo acaba ou é pulado) -->
+        <div class="hero-carousel" id="carousel">
             <div class="slide active" style="background-image: url('eletricista 1.png');"></div>
             <div class="slide" style="background-image: url('eletricista 2.png');"></div>
             <div class="slide" style="background-image: url('eletricista 3.png');"></div>
@@ -52,10 +62,10 @@
             <div class="slide" style="background-image: url('eletricista 10.png');"></div>
         </div>
         
-        <!-- CAMADA DE ESCURECIMENTO DAS FOTOS -->
+        <!-- CAMADA DE ESCURECIMENTO -->
         <div class="hero-overlay"></div>
         
-        <!-- Apenas uma barra inferior discreta com chamada rápida -->
+        <!-- Barra inferior discreta -->
         <div class="hero-bottom-bar">
             <div class="container bar-content">
                 <span>⚡ Eletricista Profissional em Ilhéus-BA</span>
