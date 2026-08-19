@@ -158,24 +158,28 @@ body {
 .intro-video-wrapper video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Mostra o vídeo comercial inteiro sem cortes */
+    object-fit: contain;
     background: #000;
 }
+
+/* BOTÃO PULAR VÍDEO (Ajustado mais para baixo) */
 .btn-skip-intro {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    z-index: 15;
     background: var(--primary);
     color: var(--white);
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 30px;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    z-index: 15;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     transition: background 0.3s, transform 0.2s;
+    
+    /* Posição ajustada para ficar mais embaixo */
+    bottom: 14px;
+    right: 10px;
 }
 .btn-skip-intro:hover {
     background: var(--primary-dark);
